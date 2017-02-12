@@ -1,0 +1,39 @@
+using System;
+using System.Linq;
+
+
+namespace ArraysHomework
+{
+    public class EightProblem
+    {
+        public static void Main()
+        {
+            var textArr = Console.ReadLine().Split(' ');
+            var copyTextArr = new string[textArr.Length];
+            var countOfEqualElements = 0;
+            var index = -1;
+
+            for (var i = textArr.Length -1 ; i > -1; i--) {
+                    index++;
+                    copyTextArr[i] = textArr[index];
+                }
+
+            for (int i = 0; i < textArr.Length; i++)
+            {
+                if (textArr[i] == copyTextArr[i]) {
+                    countOfEqualElements++;
+                }
+            }
+
+            if (countOfEqualElements == textArr.Length)
+            {
+                Console.WriteLine("Yes");
+            }
+            else
+            {
+                Console.WriteLine("No");
+            }
+       
+        }
+    }
+}

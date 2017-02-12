@@ -1,0 +1,35 @@
+using System;
+using System.Linq;
+
+
+namespace ArraysHomework
+{
+    public class SeventhProblem
+    {
+        public static void Main()
+        {
+            var text = Console.ReadLine();
+            var countOfCapLetters = 0;
+            char[] charArr = text.ToCharArray();
+
+            for (int i = 0; i < charArr.Length; i++)
+            {
+                bool capLetterCondition = (int)charArr[i] >= 65 && (int)charArr[i] <= 90;
+                bool notFirstOrLastIndex = i != 0 && i < charArr.Length - 1;
+                
+                if (capLetterCondition && notFirstOrLastIndex && charArr[i + 1] == ' ' && charArr[i - 1] == ' ')
+                {                
+                        countOfCapLetters++;                                   
+                }
+                else if (i == 0 && capLetterCondition && charArr[i + 1] == ' ') {
+                    countOfCapLetters++;
+                }
+                else if (i == charArr.Length - 1 && capLetterCondition && charArr[i - 1] == ' ') {
+                    countOfCapLetters++;
+                }
+            }
+
+            Console.WriteLine(countOfCapLetters);
+        }
+    }
+}

@@ -1,0 +1,48 @@
+using System;
+using System.Linq;
+
+
+namespace ArraysHomework
+{
+    public class ProblemNine
+    {
+        public static void Main()
+        {
+            var textArr = Console.ReadLine().Split(' ');
+            decimal initiaAlt = 0;
+
+
+            for (var i = 0; i < textArr.Length - 1; i++)
+            {
+
+                if (i == 0)
+                {
+                    initiaAlt = int.Parse(textArr[i]);
+                }
+
+                else if (i % 2 != 0)
+                {
+                    if (textArr[i] == "up")
+                    {
+                        initiaAlt += decimal.Parse(textArr[i + 1]);
+                    }
+                    else
+                    {
+                        initiaAlt -= decimal.Parse(textArr[i + 1]);
+                    }
+                }
+                if (initiaAlt <= 0 && i != 0) {
+                    Console.WriteLine("crashed");
+                    break;
+                }
+              }
+
+            if (initiaAlt > 0)
+            {
+                Console.WriteLine($"got through safely. current altitude: {initiaAlt}m");
+            }
+           
+
+        }
+    }
+}

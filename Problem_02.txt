@@ -1,0 +1,27 @@
+using System;
+using System.Linq;
+
+
+namespace ArraysHomework
+{
+    public class SecondProblem
+    {
+        public static void Main()
+        {
+            var n = int.Parse(Console.ReadLine());
+            var nums = new int[n];
+            var negativeNums = 0;
+            for (int i = 0; i < n; i++)
+            {
+                nums[i] = int.Parse(Console.ReadLine());
+                if (0 > nums[i]) {
+                    negativeNums++;
+                }
+            }
+
+            Console.WriteLine(negativeNums);
+
+
+        }
+    }
+}
